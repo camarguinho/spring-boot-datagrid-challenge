@@ -12,6 +12,8 @@ import java.net.URISyntaxException;
 @Configuration
 public class InfinispanConfiguration {
 
+    public static final String WEATHER_CACHE = "weather";
+
    @Bean
    @Order(Ordered.HIGHEST_PRECEDENCE)
    public InfinispanRemoteCacheCustomizer caches() {
@@ -19,7 +21,7 @@ public class InfinispanConfiguration {
          // Configure the weather cache to be created if it does not exist in the first call
          URI weatherCacheConfigUri = cacheConfigURI("weatherCache.xml");
 
-         b.remoteCache("weather")
+         b.remoteCache(WEATHER_CACHE)
                  .configurationURI(weatherCacheConfigUri);
       };
    }

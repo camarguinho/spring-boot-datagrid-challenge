@@ -3,13 +3,18 @@ package com.redhat.developergames.repository;
 import com.redhat.developergames.model.Weather;
 import com.redhat.developergames.model.WeatherCondition;
 import org.springframework.stereotype.Component;
+import com.redhat.developergames.config.InfinispanConfiguration;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
+
 @Component
+@CacheConfig(cacheNames=InfinispanConfiguration.WEATHER_CACHE)
 public class WeatherRepository {
    List<String> locations = Arrays.asList(
          "paris",
@@ -25,6 +30,7 @@ public class WeatherRepository {
 
    private Random random = new Random();
 
+   @Cacheable
    public Weather getByLocation(String location) {
       return fetchWeather(location);
    }
