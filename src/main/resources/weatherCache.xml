@@ -1,3 +1,6 @@
 <distributed-cache name="weather">
     <encoding media-type="application/x-java-serialized-object"/>
+    <!-- <encoding media-type="text/plain"/> -->
+    <!-- 1h = 3,600,000 ms  -->
+    <expiration lifespan="3600000"/>
 </distributed-cache>

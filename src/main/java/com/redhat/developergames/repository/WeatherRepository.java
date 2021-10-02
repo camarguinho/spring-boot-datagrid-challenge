@@ -30,7 +30,7 @@ public class WeatherRepository {
 
    private Random random = new Random();
 
-   @Cacheable
+   @Cacheable(unless="#result == null")
    public Weather getByLocation(String location) {
       return fetchWeather(location);
    }
