@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.cache.annotation.EnableCaching;
 import org.infinispan.spring.remote.session.configuration.EnableInfinispanRemoteHttpSession;
-import org.jboss.logging.Logger;
-
 
 @SpringBootApplication
 @EnableCaching
@@ -23,8 +21,6 @@ import org.jboss.logging.Logger;
 public class WeatherApp {
 
    private static final String SESSION_LAST_LOCATION = "LAST_LOCATION";
-
-   private static final Logger LOGGER = Logger.getLogger(WeatherApp.class);
 
    @Autowired
    WeatherRepository weatherRepository;
@@ -36,7 +32,6 @@ public class WeatherApp {
 
    @GetMapping("/weather/{location}")
    public Object getByLocation(@PathVariable String location, HttpSession session) {
-       LOGGER.info(location);
       session.setAttribute(SESSION_LAST_LOCATION, location);
       Weather weather = weatherRepository.getByLocation(location);
       if (weather == null) {
@@ -47,11 +42,7 @@ public class WeatherApp {
 
    @GetMapping("/latest")
    public String latestLocation(HttpSession session) {
-       String location = (String) session.getAttribute(SESSION_LAST_LOCATION);
-    LOGGER.info(location);
-    LOGGER.info(session.getAttribute(SESSION_LAST_LOCATION));
-
-      return location;
+       return (String) session.getAttribute(SESSION_LAST_LOCATION);
    }
 
    public static void main(String... args) {
