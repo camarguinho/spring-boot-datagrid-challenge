@@ -49,6 +49,7 @@
 			<version>${version.infinispan}</version>
 		</dependency>
 
+
 	</dependencies>
 
 	<build>
