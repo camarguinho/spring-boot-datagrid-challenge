@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $# -eq 0 ]
+if [ $# -ne 1 ]
     then
         echo
         echo "Usage: $0 <location>"
