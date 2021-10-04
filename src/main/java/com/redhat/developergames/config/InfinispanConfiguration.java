@@ -13,16 +13,25 @@ import java.net.URISyntaxException;
 public class InfinispanConfiguration {
 
     public static final String WEATHER_CACHE = "weather";
+    public static final String SESSION_CACHE = "sessions";
+
 
    @Bean
    @Order(Ordered.HIGHEST_PRECEDENCE)
    public InfinispanRemoteCacheCustomizer caches() {
       return b -> {
          // Configure the weather cache to be created if it does not exist in the first call
-         URI weatherCacheConfigUri = cacheConfigURI("weatherCache.xml");
+        URI weatherCacheConfigUri = cacheConfigURI("weatherCache.xml");
 
-         b.remoteCache(WEATHER_CACHE)
+        b.remoteCache(WEATHER_CACHE)
                  .configurationURI(weatherCacheConfigUri);
+
+        // Configure Session cache creation
+        URI sessionsCacheConfigUri = cacheConfigURI("sessionsCache.xml");
+
+         b.remoteCache(SESSION_CACHE)
+                 .configurationURI(sessionsCacheConfigUri)
+                 ;
       };
    }
 
