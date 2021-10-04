@@ -1,3 +1,32 @@
+= Build instructions
+
+Build and run app
+[source, bash]
+----
+mvn clean spring-boot:run
+----
+
+Deploy to openshift
+[source, bash]
+----
+cd openshift
+./deployToOpenshift.sh
+----
+
+Test app
+[source, bash]
+----
+./weatherFetcherRemote.sh <app_url>
+----
+
+Test app session
+[source, bash]
+----
+./weatherFetcherSessionRemote.sh <app_url> <location>
+./weatherFetcherSessionRemote.sh <app_url> latest
+----
+
+
 = Challenge 3: Boosting the Performance and Availability of Spring Boot with Datagrid Caches
 Álvaro López Medina <alopezme@redhat.com>; Katia Aresti <karesti@redhat.com>
 v1.0, 2021-09
