@@ -12,7 +12,7 @@
                     "template": "rhdg8-client"
                 },
                 "name": "challenge3",
-                "namespace": "user2-challenge3"
+                "namespace": "user1-challenge3"
             },
             "spec": {
                 "lookupPolicy": {
@@ -29,7 +29,7 @@
                     "template": "rhdg8-client"
                 },
                 "name": "challenge3",
-                "namespace": "user2-challenge3"
+                "namespace": "user1-challenge3"
             },
             "spec": {
                 "ports": [
@@ -53,7 +53,7 @@
                     "template": "rhdg8-client"
                 },
                 "name": "challenge3",
-                "namespace": "user2-challenge3"
+                "namespace": "user1-challenge3"
             },
             "spec": {
                 "port": {
@@ -78,7 +78,7 @@
                     "template": "rhdg8-client"
                 },
                 "name": "challenge3",
-                "namespace": "user2-challenge3"
+                "namespace": "user1-challenge3"
             },
             "spec": {
                 "replicas": 1,
@@ -185,7 +185,7 @@
                     "template": "rhdg8-client"
                 },
                 "name": "challenge3",
-                "namespace": "user2-challenge3"
+                "namespace": "user1-challenge3"
             },
             "spec": {
                 "failedBuildsHistoryLimit": 1,

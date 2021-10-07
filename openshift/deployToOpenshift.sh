@@ -1,5 +1,5 @@
 # define configuration variables
-export NAMESPACE_USER="user2"
+export NAMESPACE_USER="user1"
 #export RHDG_URL=$(oc get route ${CLUSTER_NAME}-external -n ${CLUSTER_NAMESPACE} -o template='https://{{.spec.host}}')
 export datagrid_cluster=rhdg
 export app_name=challenge3

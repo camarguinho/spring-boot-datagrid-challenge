@@ -53,4 +53,4 @@ kind: ConfigMap
 metadata:
   creationTimestamp: null
   name: challenge3-config
-  namespace: user2-challenge3
+  namespace: user1-challenge3
